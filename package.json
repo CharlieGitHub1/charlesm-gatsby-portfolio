@@ -5,15 +5,25 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "@sanity/client": "^3.4.1",
+    "babel-plugin-styled-components": "^2.0.7",
+    "framer-motion": "^7.3.2",
     "gatsby": "^4.22.0",
+    "gatsby-image": "^3.11.0",
     "gatsby-plugin-image": "^2.22.0",
     "gatsby-plugin-manifest": "^4.22.0",
     "gatsby-plugin-sharp": "^4.22.0",
+    "gatsby-plugin-styled-components": "^5.22.0",
     "gatsby-source-filesystem": "^4.22.0",
+    "gatsby-source-sanity": "^7.4.2",
+    "gatsby-transformer-json": "^4.22.0",
     "gatsby-transformer-sharp": "^4.22.0",
+    "gsap": "^3.11.1",
     "prop-types": "^15.8.1",
     "react": "^18.1.0",
-    "react-dom": "^18.1.0"
+    "react-dom": "^18.1.0",
+    "react-icons": "^4.4.0",
+    "styled-components": "^5.3.5"
   },
   "devDependencies": {
     "prettier": "^2.7.1"

@@ -1,0 +1,14 @@
+[
+  {
+    "image": "../assets/images/first_pic.jpg",
+    "alt": "cnc logo with flat white background",
+    "name": "CNC National Catastrophe",
+    "button": "View Design"
+  },
+  {
+    "image": "../assets/images/second_pic.jpg",
+    "alt": "cm portfolio logo with video background of time lapsed night view of skyscrapers",
+    "name": "CM Portfolio",
+    "button": "View Design"
+  }
+]

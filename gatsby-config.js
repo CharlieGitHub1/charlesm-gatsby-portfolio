@@ -1,21 +1,29 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    title: `Charles M Port`,
+    description: `A UI/UX Designer and Front-End Developer`,
     author: `@gatsbyjs`,
     siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
   },
   plugins: [
     `gatsby-plugin-image`,
+    `gatsby-plugin-styled-components`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
+        name: `image`,
+        path: `${__dirname}/src/assets/images`,
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `video`,
+        path: `${__dirname}/src/assets/videos`,
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -30,5 +38,26 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
+    `gatsby-transformer-json`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `./src/data/`,
+      },
+    },
+    // {
+    //   resolve: `gatsby-source-sanity`,
+    //   options: {
+    //     projectId: `abc123`,
+    //     dataset: `blog`,
+    //     // a token with read permissions is required
+    //     // if you have a private dataset
+    //     token: process.env.SANITY_TOKEN,
+
+    //     // If the Sanity GraphQL API was deployed using `--tag <name>`,
+    //     // use `graphqlTag` to specify the tag name. Defaults to `default`.
+    //     graphqlTag: 'default',
+    //   }
+    // },
   ],
 }

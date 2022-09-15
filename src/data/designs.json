@@ -1,0 +1,26 @@
+[
+  {
+    "image": "../assets/images/access.png",
+    "alt": "Above the Clouds",
+    "name": "Access",
+    "button": "View Design"
+  },
+  {
+    "image": "../assets/images/building.png",
+    "alt": "TBD",
+    "name": "TBD",
+    "button": "View Design"
+  },
+  {
+    "image": "../assets/images/pool.png",
+    "alt": "TBD",
+    "name": "TBD",
+    "button": "View Design"
+  },
+  {
+    "image": "../assets/images/pattern.png",
+    "alt": "TBD",
+    "name": "TBD",
+    "button": "View Design"
+  }
+]
