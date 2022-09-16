@@ -1,9 +1,10 @@
-import React from "react"
+import React, { useState, useEffect, useRef } from "react"
 import styled from "styled-components"
 import { keyframes } from "styled-components"
 import { motion } from "framer-motion"
 import Skyline from "../assets/videos/BuildingStreet.mp4"
 import Logo from "../assets/logos/lg-charlesM.svg"
+import { Button } from "./Button"
 
 // import Logo from "../assets/images/new-cm-logo.svg"
 // framer motion stagger children animation to stagger the children text and button.
@@ -71,14 +72,9 @@ const LandingContainer = styled.div`
     left: 0;
     right: 0;
     z-index: 2;
-    background: linear-gradient(
-        291.9deg,
-        #07011b -5.74%,
-        #251061 43.71%,
-        #00ffc2 211.96%
-      ),
+    background: linear-gradient(300deg, #251061 26%, #00ffc2 117%),
       linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, transparent 100%);
-    opacity: 0.92;
+    opacity: 0.9;
   }
 `
 
@@ -94,8 +90,8 @@ const LandingBg = styled.div`
 `
 
 const LandingVideo = styled.video`
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   -o-object-fit: cover;
   object-fit: cover;
 `
@@ -120,7 +116,7 @@ const LandingItems = styled.div`
   line-height: 1.1;
   font-weight: bold;
 `
-//Animated gradient text
+
 // const LandingH1 = styled(motion.h1)`
 //   font-size: clamp(2.5rem, 10vw, 4rem);
 //   font-weight: 800;
@@ -132,22 +128,52 @@ const LandingItems = styled.div`
 const LandingP = styled.p`
   font-size: clamp(1rem, 3vw, 1.2rem);
   margin-bottom: 2rem;
-  font-weight: 500;
+  font-weight: 700;
   letter-spacing: 15px;
+  color: #fff;
 `
 
-const Landing = () => {
+const Landing = ({ slides }) => {
+  const [slideIndex, setSlideIndex] = useState(0)
+  const length = slides.length
+  const timeout = useRef(null)
+
+  useEffect(() => {
+    timeout.current = setTimeout(() => {
+      if (slideIndex < length - 1) {
+        setSlideIndex(slideIndex + 1)
+      } else {
+        setSlideIndex(0)
+      }
+    }, 10000)
+  }, [slideIndex, length])
+
+  if (!Array.isArray(slides) || slides.length <= 0) {
+    return null
+  }
+
   return (
     <LandingContainer>
       <LandingBg>
-        <LandingVideo
-          autoPlay
-          loop
-          muted
-          playsInline
-          src={Skyline}
-          type="video/mp4"
-        />
+        {slides.map((slide, index) => {
+          return (
+            <div
+              className={index === slideIndex ? "slide active" : "slide"}
+              key={index}
+            >
+              {index === slideIndex && (
+                <LandingVideo
+                  src={slide.video}
+                  type="video/mp4"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                />
+              )}
+            </div>
+          )
+        })}
       </LandingBg>
       <LandingContent>
         <LandingItems>

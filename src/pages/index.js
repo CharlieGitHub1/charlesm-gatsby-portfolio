@@ -1,12 +1,13 @@
 import * as React from "react"
+import { Link } from "gatsby"
 import Layout from "../components/layout"
 import Landing from "../components/LandingSection"
 import Designs from "../components/Designs"
 import MotionDesign from "../components/MotionDesign"
 import ContactForm from "../components/Contact"
 import Footer from "../components/Footer"
-
 import CodingProjects from "../components/CodingProjects"
+import { slData } from "../data/SliderData"
 
 import Seo from "../components/seo"
 
@@ -14,7 +15,7 @@ const IndexPage = () => {
   return (
     <Layout>
       <Seo title="Home" />
-      <Landing />
+      <Landing slides={slData} />
       <Designs title="Designs" />
       <CodingProjects title="Coding Projects" />
       <MotionDesign title="Motion Design" />

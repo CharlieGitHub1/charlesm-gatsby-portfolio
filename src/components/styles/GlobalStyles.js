@@ -4,14 +4,13 @@ import Skyline from "../../assets/videos/BuildingStreet.mp4"
 export const GlobalStyle = createGlobalStyle`
 
 
-@import url('https://fonts.googleapis.com/css2?family=Yantramanav:wght@100;300;400;500;700&display=swap');
-
-
+@import url('https://fonts.googleapis.com/css2?family=Genos:ital,wght@0,100;0,400;0,500;0,700;1,400&display=swap');
     * {
         box-sizing: border-box;
         margin: 0;
         padding: 0;
-        font-family: 'Yantramanav', sans-serif;
+        font-family: 'Genos', sans-serif;
+
     }
 
     body {
@@ -20,7 +19,13 @@ export const GlobalStyle = createGlobalStyle`
         line-height: 1.5;
         font-weight: 400;
         background: url(${Skyline}) no-repeat center center/cover;
-        background: linear-gradient(291.9deg, #07011B -5.74%, #251061 43.71%, #00FFC2 211.96%);
+        background: linear-gradient(
+          295.9deg,
+          #07011b 85.30%,
+          #251061 92.71%,
+          #00ffc2 102.96%
+        ),
+        linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, transparent 100%);
     }
 
     h1, h2, h3, h4, h5, h6 {
@@ -30,6 +35,7 @@ export const GlobalStyle = createGlobalStyle`
 
     h1 {
         font-size: 3rem;
+        font-style:
     }
 
     h2 {

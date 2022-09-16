@@ -4,7 +4,7 @@ import styled from "styled-components"
 import { FaBars } from "react-icons/fa"
 import { menuData } from "../data/MenuData"
 import { Button } from "./Button"
-import Logo from "../assets/logos/md-charlesM.svg"
+import Logo from "../assets/logos/white-logo.svg"
 
 const NavBar = styled.nav`
   display: flex;
@@ -69,8 +69,8 @@ const Header = () => {
           src={Logo}
           alt="logo"
           style={{
-            width: "200px",
-            height: "200px",
+            width: "100px",
+            height: "100px",
           }}
         />
       </NavLink>
