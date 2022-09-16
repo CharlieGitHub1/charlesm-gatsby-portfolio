@@ -2,9 +2,7 @@ import React, { useState, useEffect, useRef } from "react"
 import styled from "styled-components"
 import { keyframes } from "styled-components"
 import { motion } from "framer-motion"
-import Skyline from "../assets/videos/BuildingStreet.mp4"
 import Logo from "../assets/logos/lg-charlesM.svg"
-import { Button } from "./Button"
 
 // import Logo from "../assets/images/new-cm-logo.svg"
 // framer motion stagger children animation to stagger the children text and button.
