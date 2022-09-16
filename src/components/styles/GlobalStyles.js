@@ -1,5 +1,4 @@
 import { createGlobalStyle } from "styled-components"
-import Skyline from "../../assets/videos/BuildingStreet.mp4"
 
 export const GlobalStyle = createGlobalStyle`
 
