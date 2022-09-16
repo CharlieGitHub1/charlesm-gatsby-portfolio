@@ -1,18 +1,18 @@
-import FirstVideo from "../assets/videos/BuildingStreet.mp4"
-import SecondVideo from "../assets/videos/CloudsSkyline.mp4"
-import ThirdVideo from "../assets/videos/TrafficSkyline.mp4"
+import FirstVideo from "../assets/images/building.png"
+import SecondVideo from "../assets/images/pool.png"
+import ThirdVideo from "../assets/images/second_pic.jpg"
 
 export const slData = [
   {
-    video: FirstVideo,
+    image: FirstVideo,
     alt: "Building",
   },
   {
-    video: SecondVideo,
+    image: SecondVideo,
     alt: "Clouds",
   },
   {
-    video: ThirdVideo,
+    image: ThirdVideo,
     alt: "Traffic",
   },
 ]

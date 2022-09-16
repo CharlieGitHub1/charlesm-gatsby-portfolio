@@ -3,6 +3,7 @@ import styled from "styled-components"
 import { keyframes } from "styled-components"
 import { motion } from "framer-motion"
 import Logo from "../assets/logos/lg-charlesM.svg"
+import { StaticImage } from "gatsby-plugin-image"
 
 // import Logo from "../assets/images/new-cm-logo.svg"
 // framer motion stagger children animation to stagger the children text and button.
@@ -87,10 +88,9 @@ const LandingBg = styled.div`
   overflow: hidden;
 `
 
-const LandingVideo = styled.video`
-  width: 100vw;
-  height: 100vh;
-  -o-object-fit: cover;
+const LandingImage = styled(StaticImage)`
+  width: 100%;
+  height: 100%;
   object-fit: cover;
 `
 
@@ -160,13 +160,13 @@ const Landing = ({ slides }) => {
               key={index}
             >
               {index === slideIndex && (
-                <LandingVideo
-                  src={slide.video}
-                  type="video/mp4"
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
+                <LandingImage
+                  src={slide.image}
+                  alt={slide.alt}
+                  placeholder="blurred"
+                  layout="fullWidth"
+                  objectFit="cover"
+                  objectPosition="50% 50%"
                 />
               )}
             </div>
