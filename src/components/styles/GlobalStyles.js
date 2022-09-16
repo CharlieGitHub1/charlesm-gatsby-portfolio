@@ -16,7 +16,6 @@ export const GlobalStyle = createGlobalStyle`
         font-size: 14px;
         line-height: 1.5;
         font-weight: 400;
-        background: url(${Skyline}) no-repeat center center/cover;
         background: linear-gradient(
           295.9deg,
           #07011b 85.30%,
