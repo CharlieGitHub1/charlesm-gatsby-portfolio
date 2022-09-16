@@ -9,7 +9,6 @@ export const GlobalStyle = createGlobalStyle`
         margin: 0;
         padding: 0;
         font-family: 'Genos', sans-serif;
-
     }
 
     body {
@@ -34,7 +33,7 @@ export const GlobalStyle = createGlobalStyle`
 
     h1 {
         font-size: 3rem;
-        font-style:
+        font-weight: 700;
     }
 
     h2 {
