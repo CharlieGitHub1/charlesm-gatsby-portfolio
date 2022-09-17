@@ -1,8 +1,6 @@
 import * as React from "react"
-import { useEffect, useState } from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
-
 import { FaBars } from "react-icons/fa"
 import { menuData } from "../data/MenuData"
 import { Button } from "./Button"
@@ -10,17 +8,11 @@ import Logo from "../assets/logos/white-logo.svg"
 
 const NavBar = styled.nav`
   display: flex;
-  background: ${({ active }) =>
-    active ? "#251061" : "linear-gradient(300deg, #251061 26%, #00ffc2 117%)"};
+  background: transparent;
   height: 70px;
   justify-content: space-between;
   z-index: 100;
-  position: absolute;
-
-  @media screen and (max-width: 960px) {
-    transition: 0.8s all ease;
-    background: ${({ click }) => (click ? "#251061" : "transparent")};
-  }
+  position: relative;
 `
 
 const NavMenu = styled.div`
@@ -28,6 +20,7 @@ const NavMenu = styled.div`
   flex-direction: row;
   justify-items: center;
   align-items: center;
+  font-size: 1rem;
   margin: 0 0 0 0;
 
   @media screen and (max-width: 768px) {
@@ -70,59 +63,28 @@ const Bars = styled(FaBars)`
 `
 
 const Header = () => {
-  const [click, setClick] = useState(false)
-  const [scroll, setScroll] = useState(false)
-
-  const handleClick = () => setClick(!click)
-  const closeMobileMenu = () => setClick(false)
-
-  const changeNav = () => {
-    if (window.scrollY >= 80) {
-      setScroll(true)
-    } else {
-      setScroll(false)
-    }
-  }
-
-  useEffect(() => {
-    changeNav()
-    window.addEventListener("scroll", changeNav)
-
-    return () => {
-      window.removeEventListener("scroll", changeNav)
-    }
-  }, [])
-
   return (
-    <NavBar active={scroll} click={click}>
-      <NavLink>
-        <Link to="/">
-          <img
-            src={Logo}
-            alt="logo"
-            style={{
-              width: "100px",
-              height: "100px",
-            }}
-          />
-        </Link>
+    <NavBar>
+      <NavLink to="/">
+        <img
+          src={Logo}
+          alt="logo"
+          style={{
+            width: "100px",
+            height: "100px",
+          }}
+        />
       </NavLink>
-      <Bars onClick={handleClick} />
-      <NavMenu onClick={handleClick} click={click} active={scroll}>
+      <Bars />
+      <NavMenu>
         {menuData.map((item, index) => (
-          <NavLink to={item.link} key={index} onClick={closeMobileMenu}>
+          <NavLink to={item.link} key={index}>
             {item.title}
           </NavLink>
         ))}
       </NavMenu>
       <NavButton>
-        <Button
-          to="/sign-up"
-          primary="true"
-          round="true"
-          big="true"
-          onClick={closeMobileMenu}
-        >
+        <Button primary="true" round="true" to="/sign-up">
           Sign Up
         </Button>
       </NavButton>

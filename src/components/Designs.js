@@ -1,10 +1,11 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import styled from "styled-components"
 import { motion } from "framer-motion"
-import { graphql, useStaticQuery } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 import { Button } from "./Button"
 import { keyframes } from "styled-components"
+import sanityClient from "@sanity/client"
+
 
 // framer motion stagger children animation to stagger the children text and button.
 
@@ -28,9 +29,13 @@ import { keyframes } from "styled-components"
 // }
 
 const DesignContainer = styled.div`
+  min-height: 100vh;
   padding: 10rem;
   color: #fff;
-  min-height: 100vh;
+
+  @media screen and (max-width: 768px) {
+    padding: 2rem 2rem;
+  }
 `
 
 const DesignHeader = styled.div`
@@ -125,136 +130,117 @@ const DesignH2 = styled.h2`
   font-weight: 800;
   letter-spacing: 5px;
 `
+const containerVariants = {
+  hidden: { x: -1500 },
+  visible: {
+    x: 0,
+    transition: {
+      delay: 0.5,
+      duration: 0.5,
+      type: "spring",
+      stiffness: 50,
+    },
+  },
+}
+
+const gradient = keyframes`
+0% {
+  background-position: 0% 50%;
+}
+50% {
+background-position: 100% 50%;
+}
+100% {
+background-position: 0% 50%;
+}
+`
+
+const AnimatedGradient = styled(motion.h1)`
+animation: ${gradient} 10s ease infinite;
+background: linear-gradient(to right, #fff 10%, #874ffe 50.15%, #fff 90%);
+background-size: 300% 300%;
+background-clip: text;
+-webkit-text-fill-color: transparent;
+-webkit-background-clip: text;
+`
 
 const Designs = ({ title }) => {
-  const containerVariants = {
-    hidden: { x: -1500 },
-    visible: {
-      x: 0,
-      transition: {
-        delay: 0.5,
-        duration: 0.5,
-        type: "spring",
-        stiffness: 50,
-      },
-    },
-  }
+  const [designProjects, setDesignProjects] = useState(null)
 
-  // const listVariants = {
-  //   hidden: { x: -1500, opacity: 0 },
-  //   visible: {
-  //     x: 0,
-  //     opacity: 1,
-  //     transition: {
-  //       delay: 2,
-  //       duration: 1.5,
-  //       type: "spring",
-  //       stiffness: 50,
-  //     },
-  //   },
-  // }
-
-  const gradient = keyframes`
-      0% {
-        background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  `
-
-  const AnimatedGradient = styled(motion.h1)`
-    animation: ${gradient} 10s ease infinite;
-    background: linear-gradient(to right, #fff 10%, #874ffe 50.15%, #fff 90%);
-    background-size: 300% 300%;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
-  `
-
-  const data = useStaticQuery(graphql`
-    query DesignQuery {
-      allDesignsJson {
-        edges {
-          node {
-            alt
-            button
-            name
-            image {
-              childImageSharp {
-                gatsbyImageData(
-                  layout: FULL_WIDTH
-                  aspectRatio: 0.7
-                  transformOptions: { cropFocus: CENTER }
-                )
-              }
-            }
-          }
-        }
-      }
-    }
-  `)
-
-  function getDesigns(data) {
-    const designsArray = []
-    data.allDesignsJson.edges.forEach((item, index) => {
-      designsArray.push(
-        <DesignCard
-          key={index}
-          whileHover={{ scale: 1.05 }}
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-        >
-          <DesignImage
-            image={item.node.image.childImageSharp.gatsbyImageData}
-            alt={item.node.alt}
-          />
-          <DesignInfo>
-            <TextWrapper>
-              <DesignTitle>{item.node.name}</DesignTitle>
-            </TextWrapper>
-            <Button
-              to="/designs"
-              primary="true"
-              round="true"
-              css={`
-                position: absolute;
-                top: 420px;
-                font-size: 14px;
-                background: {primary};
-                /* border: 1px solid #fff; */
-                color: #251061;
-
-                &:hover {
-                  background: #241D57;
-                  border: none;
-                  color: #fff;
-                }
-              `}
-            >
-              {item.node.button}
-            </Button>
-          </DesignInfo>
-        </DesignCard>
-      )
-    })
-    return designsArray
-  }
+  // useEffect(() => {
+  //   sanityClient.fetch(
+  //     `*[_type == "designProject"]{
+  //     title,
+  //     description,
+  //     link,
+  //     projectType,
+  //     tags,
+  //     mainImage{
+  //       asset->{
+  //         _id,
+  //         url
+  //       },
+  //       alt
+  //     }
+  //   }`
+  //   )
+  //     .then((data) => setDesignProjects(data))
+  //     .catch(console.error)
+  // }, [])
 
   return (
     <DesignContainer>
       <DesignHeader>
-        <AnimatedGradient>
-          <DesignH2>{title}</DesignH2>
-        </AnimatedGradient>
+        <DesignH2>{title}</DesignH2>
       </DesignHeader>
-      <DesignWrap>{getDesigns(data)}</DesignWrap>
+      <DesignWrap
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+      >
+        {designProjects &&
+          designProjects.map((designProject, index) => (
+            <DesignCard
+              key={index}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <DesignImage
+                image={designProject.mainImage.asset.gatsbyImageData}
+                alt={designProject.mainImage.alt}
+              />
+              <DesignInfo>
+                <TextWrapper>
+                  <DesignTitle>
+                    <AnimatedGradient>{designProject.title}</AnimatedGradient>
+                  </DesignTitle>
+                </TextWrapper>
+              </DesignInfo>
+              <Button
+                to={designProject.link}
+                primary="true"
+                round="true"
+                css={`
+                  position: absolute;
+                  top: 425px;
+                  font-size: 14px;
+                `}
+              >
+                View Project
+              </Button>
+            </DesignCard>
+          ))}
+      </DesignWrap>
     </DesignContainer>
   )
 }
 
 export default Designs
+
+
+
+
+
+
+
+

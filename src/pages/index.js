@@ -1,12 +1,12 @@
 import * as React from "react"
 import Layout from "../components/layout"
-import Landing from "../components/LandingSection"
 import Designs from "../components/Designs"
 import MotionDesign from "../components/MotionDesign"
 import ContactForm from "../components/Contact"
 import Footer from "../components/Footer"
+import Header from "../components/Header"
 import CodingProjects from "../components/CodingProjects"
-import { slData } from "../data/SliderData"
+import Hero from "./../components/landing_page/Hero"
 
 import Seo from "../components/seo"
 
@@ -14,9 +14,10 @@ const IndexPage = () => {
   return (
     <Layout>
       <Seo title="Home" />
-      <Landing slides={slData} />
+      <Header />
+      <Hero />
       <Designs title="Designs" />
-      <CodingProjects title="Coding Projects" />
+      <CodingProjects />
       <MotionDesign title="Motion Design" />
       <ContactForm />
       <Footer />
