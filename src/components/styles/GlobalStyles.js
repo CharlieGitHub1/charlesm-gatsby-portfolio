@@ -2,12 +2,11 @@ import { createGlobalStyle } from "styled-components"
 export const GlobalStyle = createGlobalStyle`
 
 
-@import url('https://fonts.googleapis.com/css2?family=Genos:ital,wght@0,100;0,400;0,500;0,700;1,400&display=swap');
-    * {
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@200;400;600;700;800&display=swap');    * {
         box-sizing: border-box;
         margin: 0;
         padding: 0;
-        font-family: 'Genos', sans-serif;
+        font-family: 'Noto Sans', sans-serif;
     }
 
     body {

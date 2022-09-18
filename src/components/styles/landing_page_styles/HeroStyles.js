@@ -21,7 +21,7 @@ export const listItem = {
   show: { opacity: 1 },
 }
 
-export const gradient = keyframes`
+ const gradient = keyframes`
     0% {
         background-position: 0% 50%;
     }
@@ -72,7 +72,7 @@ export const HeroSectionStyles = styled(motion.div)`
       z-index: 2;
       background: linear-gradient(291.9deg, #251061 92%, #00ffc2 110.96%),
         linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, transparent 100%);
-      opacity: 0.4;
+      opacity: 0.2;
     }
     &::after {
       content: "";
@@ -81,7 +81,12 @@ export const HeroSectionStyles = styled(motion.div)`
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(135deg, #030213, #08011c);
+      background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.2) 0%,
+        rgba(0, 0, 0, 0.2) 100%
+      ),
+      linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, transparent 100%);
       z-index: -1;
     }
     .left {
@@ -89,9 +94,9 @@ export const HeroSectionStyles = styled(motion.div)`
       padding: 50px 0;
       .hero__heading {
         max-width: 450px;
-        font-size: 2rem;
+        font-size: 3rem;
         line-height: 1.2;
-        font-weight: "700";
+        font-weight: 700;
         margin: 0.2rem 0;
       }
       .hero__text {
@@ -134,7 +139,7 @@ export const HeroSectionStyles = styled(motion.div)`
         width: 100%;
         padding: 0;
         .hero__heading {
-          font-size: 2.5rem;
+          font-size: 4rem;
           line-height: 1.2;
           font-weight: "700";
           margin: 0.2rem 0;
