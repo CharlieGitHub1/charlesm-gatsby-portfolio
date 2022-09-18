@@ -19,7 +19,19 @@ export const NavMenu = styled.div`
   justify-items: center;
   align-items: center;
   font-size: 1rem;
+  font-weight: 300;
+  letter-spacing: 0.1rem;
   margin: 0 0 0 0;
+
+  &.active {
+    transform: translateX(0);
+    transition: transform 0.3s ease-in-out;
+    color: #00ffc2;
+  }
+
+  &.hover {
+    color: #00ffc2;
+  }
 
   @media screen and (max-width: 768px) {
     display: none;

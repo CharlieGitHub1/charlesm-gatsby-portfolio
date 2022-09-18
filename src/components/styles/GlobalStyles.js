@@ -21,6 +21,8 @@ export const GlobalStyle = createGlobalStyle`
           #00ffc2 102.96%
         ),
         linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, transparent 100%);
+        background-repeat: no-repeat;
+        background-size: cover;
     }
 
     h1, h2, h3, h4, h5, h6 {
@@ -56,6 +58,16 @@ export const GlobalStyle = createGlobalStyle`
     a {
         color: #ffff;
         text-decoration: none;
+
+        &:hover {
+            color: #00ffc2;
+            transition: 0.3s ease-out;
+        }
+
+        &:active {
+            color: #00ffc2;
+            transition: 0.3s ease-out;
+        }
     }
 
     p {

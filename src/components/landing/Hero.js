@@ -3,8 +3,15 @@ import Logo from "../../assets/logos/lg-charlesM.svg"
 import { motion } from "framer-motion"
 import Vid from "../../assets/videos/video.mp4"
 import { Button } from "../Button"
-
 import { HeroSectionStyles } from "../styles/landing_page_styles/HeroStyles"
+
+
+
+
+
+
+
+
 
 const Hero = () => {
   return (

@@ -1,4 +1,5 @@
 import  React from "react"
+import { Link } from "gatsby"
 import { menuData } from "../../data/MenuData"
 import { Button } from "../Button"
 import {
@@ -9,12 +10,13 @@ import {
   NavButton,
 } from "../styles/header_styles/HeaderStyles"
 
-import Logo from "../../assets/logos/white-logo.svg"
+import Logo from "../../assets/logos/cm-grad.svg"
 
 const Header = () => {
   return (
     <NavBar>
-      <NavLink to="/">
+      <NavLink>
+        <Link to="/">
         <img
           src={Logo}
           alt="logo"
@@ -23,18 +25,19 @@ const Header = () => {
             height: "100px",
           }}
         />
+        </Link>
       </NavLink>
       <Bars />
       <NavMenu>
         {menuData.map((item, index) => (
-          <NavLink to={item.link} key={index}>
-            {item.title}
+          <NavLink key={index}>
+            <Link to={item.link}>{item.title}</Link>
           </NavLink>
         ))}
       </NavMenu>
       <NavButton>
-        <Button primary="true" round="true" to="/sign-up">
-          Sign Up
+        <Button primary="true" round="true" to="/contact">
+          Contact Me
         </Button>
       </NavButton>
     </NavBar>

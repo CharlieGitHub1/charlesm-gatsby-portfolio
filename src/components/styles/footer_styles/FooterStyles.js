@@ -82,9 +82,9 @@ export const FooterContainer = styled(motion.div)`
 `
 
 export const FooterWrap = styled(motion.div)`
-  z-index: 3;
+  z-index: 999;
   width: 100%;
-  position: absolute;
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -92,6 +92,7 @@ export const FooterWrap = styled(motion.div)`
 
   @media screen and (max-width: 768px) {
     padding: 0 1rem;
+    flex-direction: wrap;
   }
 `
 

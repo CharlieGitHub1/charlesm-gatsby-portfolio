@@ -1,6 +1,17 @@
+//Create keyframe svg path stroke animation stroke animation color solid #251061 from left to right: ../../assets/logos/lg-charlesM.svg
+
 import styled from "styled-components"
 import { keyframes } from "styled-components"
 import { motion } from "framer-motion"
+
+
+
+
+
+
+
+
+
 
 export const container = {
   hidden: { opacity: 0, y: 20 },
@@ -48,7 +59,7 @@ export const AnimatedGradient = styled(motion.h1)`
 `
 
 export const HeroSectionStyles = styled(motion.div)`
-  min-height: 80vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -64,7 +75,7 @@ export const HeroSectionStyles = styled(motion.div)`
 
     &::before {
       content: "";
-      position: absolute;
+      position: relative;
       top: 0;
       bottom: 0;
       left: 0;
@@ -72,11 +83,11 @@ export const HeroSectionStyles = styled(motion.div)`
       z-index: 2;
       background: linear-gradient(291.9deg, #251061 92%, #00ffc2 110.96%),
         linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, transparent 100%);
-      opacity: 0.2;
+      opacity: 0.7;
     }
     &::after {
       content: "";
-      position: absolute;
+      position: relative;
       top: 0;
       left: 0;
       width: 100%;
@@ -87,14 +98,14 @@ export const HeroSectionStyles = styled(motion.div)`
         rgba(0, 0, 0, 0.2) 100%
       ),
       linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, transparent 100%);
-      z-index: -1;
+      z-index: 3;
     }
     .left {
-      width: 50%;
-      padding: 50px 0;
+      width: 100%;
+      height: 100%;
       .hero__heading {
         max-width: 450px;
-        font-size: 3rem;
+        font-size: rem;
         line-height: 1.2;
         font-weight: 700;
         margin: 0.2rem 0;
@@ -143,7 +154,6 @@ export const HeroSectionStyles = styled(motion.div)`
           line-height: 1.2;
           font-weight: "700";
           margin: 0.2rem 0;
-        }
         .hero__text {
           max-width: 350px;
         }
