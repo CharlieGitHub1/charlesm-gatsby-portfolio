@@ -15,14 +15,14 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `image`,
-        path: `${__dirname}/src/assets/images`,
+        path: `${__dirname}/static/`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `video`,
-        path: `${__dirname}/src/assets/videos`,
+        path: `${__dirname}/static/`,
       },
     },
     `gatsby-transformer-json`,
