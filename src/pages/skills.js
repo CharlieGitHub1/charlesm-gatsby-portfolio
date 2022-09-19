@@ -2,7 +2,7 @@ import * as React from "react"
 import { Link } from "gatsby"
 import { Button } from "../components/Button"
 
-import Layout from "../components/layout"
+import Layout from "../components/Layout"
 import Seo from "../components/seo"
 
 const SkillPage = () => (

@@ -1,5 +1,5 @@
 import * as React from "react"
-import Layout from "../components/layout"
+import Layout from "../components/Layout"
 import ContactForm from "../components/contact_form/Contact"
 import Footer from "../components/footer/Footer"
 
