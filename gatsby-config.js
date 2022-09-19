@@ -2,6 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Charles M Port`,
     description: `A UI/UX Designer and Front-End Developer`,
+    copyright: `Copyright © 2022 Charles M`,
     author: `@gatsbyjs`,
     siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
   },
