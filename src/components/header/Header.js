@@ -10,7 +10,7 @@ import {
   NavButton,
 } from "../styles/header_styles/HeaderStyles"
 
-import Logo from "../../assets/logos/cm-grad.svg"
+
 
 const Header = () => {
   return (
@@ -18,7 +18,7 @@ const Header = () => {
       <NavLink>
         <Link to="/">
         <img
-          src={Logo}
+          src="/cm-grad.svg"
           alt="logo"
           style={{
             width: "100px",

@@ -1,7 +1,6 @@
 import React from "react"
-import Logo from "../../assets/logos/lg-charlesM.svg"
 import { motion } from "framer-motion"
-import Vid from "../../assets/videos/video.mp4"
+
 import { Button } from "../Button"
 import { HeroSectionStyles } from "../styles/landing_page_styles/HeroStyles"
 
@@ -23,7 +22,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: -100 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.5, delay: 0.5 }}
-              src={Logo}
+              src="/lg-charlesM.svg"
               alt="logo"
               style={{
                 paddingBottom: "3rem",
@@ -62,7 +61,7 @@ const Hero = () => {
           <div className="right">
             <video
               className="hero_video"
-              src={Vid}
+              src="/video.mp4"
               autoPlay
               loop
               muted
