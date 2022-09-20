@@ -1,37 +1,37 @@
 [
   {
+    "id": "1",
     "title": "React Basics",
     "slug": "react",
     "url": "https://github.com/CharlieGitHub1/react-monsters",
-    "image": "../assets/images/react_app.jpg",
     "description": "A simple React app that fetches data from an API and displays it on the page. The app also allows you to search for specific objects by name."
   },
   {
+    "id": "2",
     "title": "E Comm App",
     "slug": "e-comm",
     "url": "https://github.com/CharlieGitHub1/ecomm-store",
-    "image": "../assets/images/access.png",
     "description": "This project is on hold for now. It is a React app that will be an e-commerce store."
   },
   {
+    "id": "3",
     "title": "Airbnb Backend Clone with Sanity.io",
     "slug": "airbnb",
     "url": "https://github.com/CharlieGitHub1/airbnb-backend",
-    "image": "../assets/images/first_pic.jpg",
     "description": "This project is on hold for now. It is a backend clone of Airbnb using Sanity.io."
   },
   {
+    "id": "4",
     "title": "Access WTX Weather API",
     "slug": "wtx",
     "url": "https://github.com/CharlieGitHub1/weatherAPI",
-    "image": "../assets/images/access.png",
     "description": "This project is on hold for now, and will be able to provides access to weather data from the WTX weather station."
   },
   {
+    "id": "5",
     "title": "Webpack",
     "slug": "webpack",
     "url": "https://github.com/CharlieGitHub1/webpack-project",
-    "image": "../assets/images/building.png",
     "description": "This project allows you to build out a React app from scratch without having to use create-react-app."
   }
 ]
