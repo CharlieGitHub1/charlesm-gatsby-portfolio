@@ -37,8 +37,8 @@ const Header = () => {
         ))}
       </NavMenu>
       <NavButton>
-        <Button primary="true" round="true" to="/contact">
-          Contact Me
+        <Button primary="true" round="true" to="/resume">
+          View Resume
         </Button>
       </NavButton>
     </NavBar>

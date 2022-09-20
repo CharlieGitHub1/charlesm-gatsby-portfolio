@@ -3,7 +3,8 @@ import Layout from "../components/layout"
 import ContactForm from "../components/contact_form/Contact"
 import Footer from "../components/footer/Footer"
 
-import Hero from "../components/landing/Hero"
+
+import HeroVidBg from "../components/landing/HeroVidBg"
 
 import Seo from "../components/seo"
 
@@ -11,8 +12,9 @@ const IndexPage = () => {
   return (
     <Layout>
       <Seo title="Home" />
-      <Hero />
+      <HeroVidBg />
       <ContactForm />
+
       <Footer />
     </Layout>
   )
