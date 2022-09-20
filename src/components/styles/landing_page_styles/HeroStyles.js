@@ -75,15 +75,15 @@ export const HeroSectionStyles = styled(motion.div)`
 
     &::before {
       content: "";
-      position: relative;
+
       top: 0;
       bottom: 0;
       left: 0;
       right: 0;
       z-index: 2;
-      background: linear-gradient(291.9deg, #251061 92%, #00ffc2 110.96%),
+      background: linear-gradient(291.9deg, #251061 98%, #00ffc2 110.96%),
         linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, transparent 100%);
-      opacity: 0.7;
+      opacity: 0.5;
     }
     &::after {
       content: "";
@@ -98,14 +98,14 @@ export const HeroSectionStyles = styled(motion.div)`
         rgba(0, 0, 0, 0.2) 100%
       ),
       linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, transparent 100%);
-      z-index: 3;
     }
     .left {
-      width: 100%;
+
+      width: 50%;
       height: 100%;
       .hero__heading {
         max-width: 450px;
-        font-size: rem;
+        font-size: clamp(1.5rem, 6vw, 4rem);
         line-height: 1.2;
         font-weight: 700;
         margin: 0.2rem 0;
@@ -127,6 +127,7 @@ export const HeroSectionStyles = styled(motion.div)`
         width: 100%;
         height: 100%;
         object-fit: cover;
+        opacity: .6;
       }
     }
   }

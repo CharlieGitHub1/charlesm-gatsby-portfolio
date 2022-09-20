@@ -7,6 +7,7 @@ module.exports = {
     siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
   },
   plugins: [
+    `gatsby-transformer-json`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
     `gatsby-plugin-styled-components`,
@@ -15,18 +16,24 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `image`,
+        name: `static`,
         path: `${__dirname}/static/`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `video`,
-        path: `${__dirname}/static/`,
+        name: `pages`,
+        path: `${__dirname}/src/pages/`,
       },
     },
-    `gatsby-transformer-json`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `projects`,
+        path: `${__dirname}/src/pages/projects/`,
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
