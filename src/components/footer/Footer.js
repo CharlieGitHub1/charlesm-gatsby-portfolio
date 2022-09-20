@@ -36,12 +36,12 @@ const Footer = () => {
           <FooterLinksWrapper>
             <FooterLinkItems>
               <FooterLinkTitle>
-                <AnimatedGradient>CONTACT US</AnimatedGradient>
+                <AnimatedGradient>CONTACT Me</AnimatedGradient>
               </FooterLinkTitle>
               <FooterLink to="/signin">Contact</FooterLink>
-              <FooterLink to="/signin">Support</FooterLink>
-              <FooterLink to="/signin">Destinations</FooterLink>
-              <FooterLink to="/signin">Sponsorships</FooterLink>
+              <FooterLink to="/signin">Gmail</FooterLink>
+              <FooterLink to="/signin">LinkedIn</FooterLink>
+              <FooterLink to="/signin">Instagram</FooterLink>
             </FooterLinkItems>
           </FooterLinksWrapper>
           <FooterLinksWrapper>
@@ -50,9 +50,9 @@ const Footer = () => {
                 <AnimatedGradient>VIDEOS</AnimatedGradient>
               </FooterLinkTitle>
               <FooterLink to="/signin">Submit Video</FooterLink>
-              <FooterLink to="/signin">Ambassadors</FooterLink>
-              <FooterLink to="/signin">Agency</FooterLink>
-              <FooterLink to="/signin">Influencer</FooterLink>
+              <FooterLink to="/signin">Label</FooterLink>
+              <FooterLink to="/signin">Label</FooterLink>
+              <FooterLink to="/signin">Label</FooterLink>
             </FooterLinkItems>
             <FooterLinkItems>
               <FooterLinkTitle>
@@ -61,7 +61,7 @@ const Footer = () => {
               <FooterLink to="/signin">Instagram</FooterLink>
               <FooterLink to="/signin">Facebook</FooterLink>
               <FooterLink to="/signin">Youtube</FooterLink>
-              <FooterLink to="/signin">Twitter</FooterLink>
+              <FooterLink to="/signin">Snapchat</FooterLink>
             </FooterLinkItems>
           </FooterLinksWrapper>
         </FooterLinksContainer>
